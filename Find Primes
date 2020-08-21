@@ -1,0 +1,55 @@
+// Import statement:
+
+import java.util.ArrayList;
+
+public class PrimeDirective {
+
+  public static void main(String[] args){
+
+    PrimeDirective pd = new PrimeDirective();
+    int[] numbers = {6, 29, 28, 33, 11, 100, 101, 43, 89};
+    System.out.println(isPrime(0));
+    System.out.println(pd.onlyPrimes(numbers));
+  }  
+
+  public static boolean isPrime(int number){ //finds primes when an integer is given
+    int primeCount = 0;
+    int secondNumber = number;
+    
+    for(int i = secondNumber; i > 0; i--){
+      if(number % i == 0){
+        primeCount = primeCount + 1;
+      }else{
+      }
+    }
+
+    boolean answer;
+          if(primeCount > 2 || number == 0){
+        answer = false;
+      }else{
+        answer = true;
+      }
+      return answer;
+  }
+
+  public ArrayList<Integer> onlyPrimes(int[] numbers){ //finds primes from an array
+    ArrayList<Integer> primes = new ArrayList<Integer>();
+    int newPrimeCount = 0;
+    for(int i = 0; i < numbers.length; i++){
+      primes.add(numbers[i]);
+    }
+    ArrayList<Integer> truePrimes = new ArrayList<Integer>();
+    truePrimes.addAll(primes); //created a new, copied arraylist since you can't change an arraylist as you iterate through it
+    for(Integer primePotential : primes){
+      for(int j = 2; j < primePotential; j++){
+        if(primePotential % j == 0){
+          truePrimes.remove(primePotential);
+          break;
+        }else{
+
+        }
+    }
+}
+  return truePrimes;
+}
+}
